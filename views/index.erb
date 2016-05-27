@@ -1,0 +1,46 @@
+<h2>Stock Levels</h2>
+<table>
+  <tr>
+    <th>Artist</th>
+    <th>Album</th>
+    <th>Buying</th>
+    <th>Selling</th>
+    <th>Qty</th>
+    <th>Low Stock</th>
+    <th>High Stock</th>
+    <th>Profit + -</th>
+  </tr>
+  <% @artists.each do |artist| %>
+  <% artist.albums.each do |album| %>
+
+  <tr>
+  <td><%= artist.name %></td>
+  <td><%= album.name %></td>
+  <td><%= album.price_buying %></td>
+  <td><%= album.price_selling %></td>
+    <td class="<%= 'normal_quantity' if album.quantity < 5 %>"><%= album.quantity %></td>
+    <td class="<%= 'low_quantity' if album.quantity < 5 %>"><%= album.quantity %></td>
+    <td class="<%= 'high_quantity' if album.quantity > 5 %>"><%= album.quantity %></td>
+    <td ><strong><%= album.profit %></strong></td>
+  </tr>
+  <% end %>
+  <% end %>
+
+</table><br>
+        <div id="story-excerpt">
+          <p>When stock is <strong>low</strong> the stock level will show <strong>red</strong></p>
+          <p>When stock is <strong>High</strong> the stock level will show <strong>green</strong></p>
+        </div><!-- end story-excerpt
+
+<!-- <ul>
+  <% @artists.each do |artist| %>
+    <li>
+    <%= artist.name %>
+      <ul>
+        <% artist.albums.each do |album| %>
+          <li><%= album.name %> x <%= album.price_buying %> x <%= album.price_selling %></li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+</ul> -->

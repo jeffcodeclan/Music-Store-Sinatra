@@ -1,0 +1,38 @@
+<div class="content">
+
+  <h2>Add Album</h2>
+  <div class="add_album">
+
+
+  <form action="/albums" method="post">
+  <label for="artist"><strong>Artist</strong></label>
+  <select name="artist_id">
+      <% @artists.each do |artist| %>
+        <option value="<%= artist.id %>"><%= artist.name %></option>    
+      <%  end %>
+  </select>
+    <label for="name"><strong>Album Name:</strong></label>
+    <input type="text" name="name">
+    <label for="name"><strong>Genre:</strong></label>
+    <input type="text" name="genre">
+    <label for="name"><strong>Price Buying:</strong></label>
+    <input type="text" name="price_buying" class="numbers">
+    <label for="name"><strong>Price Selling:</strong></label>
+    <input type="text" name="price_selling" class="numbers">
+    <label for="name"><strong>Qty:</strong></label>
+    <input type="text" name="quantity" class="numbers"><br>
+
+<!--     <label for="name">Profit:</label>
+    <input type="text" name="profit"><br> -->
+
+ <!--    <label for="artist">Artist</label> -->
+ <!--    <select name="artist_id">
+        <% @artists.each do |artist| %>
+          <option value="<%= artist.id %>"><%= artist.name %></option>    
+        <%  end %>
+    </select> -->
+
+    <input type='submit' value="Add Album">
+  </form>
+</div>
+</div>
